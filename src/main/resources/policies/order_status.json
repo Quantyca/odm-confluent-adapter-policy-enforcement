@@ -1,0 +1,5 @@
+{
+    "displayName": "Orders status policies",
+    "description": "Set of policies for the package orders",
+    "rawPolicy": "package order_status\n\ndefault allow := false\n\nallow := true {                                     \n    input.state == \"Processing\"\n}"
+  }

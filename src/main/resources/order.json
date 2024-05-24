@@ -1,0 +1,7 @@
+{
+  "orderId":  10,
+  "customerId": 3,
+  "totalPriceCents": 600,
+  "state": "Processing",
+  "timestamp": 123456789
+}

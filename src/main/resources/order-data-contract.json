@@ -1,0 +1,27 @@
+{  
+  "metadata": {
+    "properties": {
+       "owner": "OrdersTeam",
+       "owner_email": "<email_owner>"
+    }
+  },
+  "ruleSet": {
+      "domainRules": [
+        {
+          "name": "customPolicy",
+          "doc": "Check if the message satisfies the policy",
+          "kind": "CONDITION",
+          "type": "CUSTOMEXECUTOR",
+          "mode": "WRITE",
+          "params": {
+            "policy.names": "order_value,order_status",
+            "policy.host": "http://localhost:9001",
+            "mail.smtp.host": "<mail_smtp_host>",
+            "mail.smtp.port": "<mail_smtp_port>",
+            "dlq.topic": "bad-orders"
+          },
+          "onFailure": "CUSTOMACTION"
+        }
+      ]
+    }
+}
